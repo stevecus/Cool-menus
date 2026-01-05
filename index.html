@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Viewer</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body, html {
             width: 100%;
@@ -24,11 +20,13 @@
             justify-content: center;
             align-items: center;
             background: #000;
+            overflow: auto; /* allow scroll if needed */
         }
 
         img {
             max-width: 100%;
-            height: auto;
+            max-height: 100%;
+            object-fit: contain; /* show full image, no crop */
             display: block;
         }
     </style>
@@ -38,5 +36,7 @@
         <img src="image.jpeg" alt="Static image">
     </div>
 </body>
+</html>
+
 </html>
 
