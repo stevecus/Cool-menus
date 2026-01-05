@@ -80,13 +80,7 @@
 <body>
     <div class="container">
         <div class="controls">
-            <input 
-                type="text" 
-                id="pdfUrl" 
-                placeholder="Relative path (e.g., docs/tappermenu.pdf)" 
-                value="document.pdf"
-            >
-            <button onclick="loadPDF()">Load</button>
+            <span id="status" style="color: #b5bac1; font-size: 13px;">tappermenu.pdf</span>
         </div>
         <div class="pdf-container">
             <embed id="pdfViewer" type="application/pdf">
@@ -94,19 +88,11 @@
     </div>
 
     <script>
-        function loadPDF() {
-            const url = document.getElementById('pdfUrl').value.trim();
-            if (url) {
-                document.getElementById('pdfViewer').src = url;
-            }
-        }
-
-        document.getElementById('pdfUrl').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') loadPDF();
-        });
-
+        const pdfPath = 'document.pdf';
+        
         window.addEventListener('load', () => {
-            setTimeout(loadPDF, 100);
+            const viewer = document.getElementById('pdfViewer');
+            viewer.src = pdfPath;
         });
     </script>
 </body>
